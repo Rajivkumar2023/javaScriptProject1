@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>video player</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <header> <h1>Rajiv's bday Video Player</h1></header>
+    <section>
+        <video src="rajiv's bday2.mp4" width="100%" height="400px" id="vdeo"></video> 
+        <!--  yeha per  "controls" attributes ka v paryog karke video ko control kar sakte hai  -->
+    </section>
+
+
+    <footer>
+        <button id="ubtn">
+            Upload
+            <input type="file" accept=".mp4" id="vupload" onchange="upload()">
+        </button>
+        <button id="play" onclick="vplay()">Play</button>
+        <button id="pause" onclick="vpause()">Pause</button>
+
+    </footer>
+    <script>
+        function vplay(){
+            var a = document.getElementById("vdeo");
+            a.play();
+        }
+        function vpause(){
+            var a = document.getElementById("vdeo");
+            a.pause();
+        }
+        function upload(){
+            var a = document.getElementById("vupload").value.replace(/.*(\/|\\)/, '');
+            var b = document.getElementById("vdeo");
+            b.src=a;
+        }
+    </script>
+</body>
+</html>
